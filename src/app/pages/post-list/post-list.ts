@@ -18,10 +18,11 @@ export class PostList implements OnInit {
    }
 
    ngOnInit(): void {
-     this.postService.getPosts().subscribe(data => {
-      this.posts = data
+     this.postService.getPosts().subscribe({
+      next:(data) => this.posts = data,
+      error: (err) => console.error (err)
      }
-     )
+     );
    }
    
 

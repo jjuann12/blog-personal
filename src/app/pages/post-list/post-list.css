@@ -3,8 +3,10 @@ h2{
     font-size: 50px;
 }
 h3 {
-    color: rgb(219, 112, 40);
+    color: rgb(255, 1, 1);
 }
 a{
     text-decoration: none;
+    color: red;
 }
+
