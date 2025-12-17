@@ -21,5 +21,9 @@ export class PostService {
   getPostById(id: number): Observable<Post> {
     return this.http.get<Post>(`${this.apiUrl}${id}/`);
   }
+
+  createPost(data: FormData){
+    return this.http.post('http://localhost:8000/api/posts/', data)
+  }
 }
 

@@ -10,6 +10,13 @@
       {{ post.title }}
     </a>
   </h3>
+  <img
+    *ngIf="post.image"
+    [src]="post.image"
+    alt="{{ post.title }}"
+    width="300"
+  />
+
 
   <small>
     Por {{ post.author }} - {{ post.created_at }} - {{post.id}}

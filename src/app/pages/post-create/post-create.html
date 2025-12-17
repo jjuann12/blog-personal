@@ -1,0 +1,38 @@
+<h2>Crear Post</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()" method="post" enctype="multipart/form-data">
+
+  <input type="text" formControlName="title" placeholder="Título" />
+  <div class="form-invalid" *ngIf="form.get('title')?.touched && form.get('title')?.invalid">
+    el titulo es obligatorio capoide 
+  </div>
+  <br />
+
+  <textarea formControlName="content" placeholder="Contenido"></textarea>
+  <div class="form-invalid" *ngIf="form.get('content')?.touched && form.get('content')?.invalid">
+    el contenido es obligatorio capoide 
+  </div>
+  <br />
+
+  <input type="text" formControlName="author" placeholder="Autor" />
+  <div class="form-invalid" *ngIf="form.get('author')?.touched && form.get('author')?.invalid">
+    el autorrr es obligatorio capoide 
+  </div>
+  <br />
+
+  <input type="file" (change)="onFileSelected($event)" />
+
+  <br />
+
+  <img
+    *ngIf="imagePreview"
+    [src]="imagePreview"
+    width="200"
+  />
+
+  <br />
+  <p *ngIf="selectFile">Archivo seleccionado: {{ selectFile.name }}</p>
+
+  <br>
+  <button type="submit">Crear</button>
+</form>
