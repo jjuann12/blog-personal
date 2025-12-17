@@ -12,9 +12,9 @@ import { Post } from '../../models/post/post';
   styleUrl: './posts-detail.css',
 })
 export class PostsDetail implements OnInit {
+  posts: Post[] = [];
 
   post?: Post
-  postsAuthor! : string
 
   constructor (private route: ActivatedRoute, private postService:PostService){}
 
