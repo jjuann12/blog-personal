@@ -1,6 +1,6 @@
 .conteiner{
-    background-color: #ACC8E5;
-    color: #06182B;
+    background-color: #000839;
+    color: #FEFFFF;
     display: flex;
 }
 
@@ -11,7 +11,7 @@
 
 a {
     text-decoration: none;
-    color: #06182B;
+    color: #FEFFFF;
     margin: 10px;
     padding: 10px;
 }

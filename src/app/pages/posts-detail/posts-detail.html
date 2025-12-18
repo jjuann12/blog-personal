@@ -1,27 +1,25 @@
-<p *ngIf="posts.length === 0">
-  No hay publicaciones disponibles.
+<section class="post-detail" *ngIf="post as p">
+<header class="post-header">
+<p class="post-eyebrow">Detalle de la publicación</p>
+<h1 class="post-title">{{ p.title }}</h1>
+<p class="post-meta">
+<span>Por <strong>{{ p.author }}</strong></span>
+<span class="dot">•</span>
+<time>{{ p.created_at | date:'longDate' }}</time>
 </p>
+</header>
 
 
-<div *ngIf="post as p">
-  <h1>Detalle del Post que estoy haciendo brether</h1>
-  <h2>{{ post.title }}</h2>
+<figure class="post-image" *ngIf="p.image">
+<img [src]="p.image" [alt]="p.title" />
+</figure>
 
-  <p>
-    <small>
-      Por {{ post.author }} - {{ post.created_at }}
-    </small>
-  </p>
 
-    <img
-      *ngIf="post.image"
-      [src]="post.image"
-      alt="{{ post.title }}"
-      width="300"
-    />
+<article class="post-content">
+{{ p.content }}
+</article>
+</section>
 
-  <p>{{ post.content }}</p>
-</div>
 
 
 

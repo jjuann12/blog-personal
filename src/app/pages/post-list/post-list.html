@@ -4,29 +4,34 @@
   No hay publicaciones disponibles.
 </p>
 
-<article *ngFor="let post of posts">
-  <h3>
-    <a [routerLink]="['/posts', post.id]">
-      {{ post.title }}
-    </a>
-  </h3>
-  <img
-    *ngIf="post.image"
-    [src]="post.image"
-    alt="{{ post.title }}"
-    width="300"
-  />
+<section class="posts-gallery">
 
 
-  <small>
-    Por {{ post.author }} - {{ post.created_at }} - {{post.id}}
-  </small>
+  <article *ngFor="let post of posts">
+  <div class="card text-bg-dark" >
+    <img
+      *ngIf="post.image"
+      [src]="post.image"
+      alt="{{ post.title }}"
+      width="300"
+    />
+    <div class="card-img-overlay">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="card-text">Guadado el {{post.created_at | date}} -- Por: {{post.author}}</p>
 
-  <p>{{ post.content }}</p>
+      <div class="card-actions">
+        <button class="btn btn-danger w-100" (click)="onDelete(post.id)">
+          <i class="ri-delete-bin-5-line"></i> ELIMINAR
+        </button>
+        <button class="btn btn-primary w-100" [routerLink]="['/posts', post.id]">
+          <i class="ri-eye-line"></i> Ver
+        </button>
 
-  <button (click)="onDelete(post.id)" class="btn btn-danger">BORRAR</button>
-  <hr>
+      </div>
+    </div>
 
+  </div>
 
+  </article>
 
-</article>
+</section>
