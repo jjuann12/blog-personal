@@ -1,26 +1,26 @@
-<h2>Crear Post</h2>
+<h2>Crear publicación</h2>
 
 <form [formGroup]="form" (ngSubmit)="submit()" method="post" enctype="multipart/form-data">
 
-  <input type="text" formControlName="title" placeholder="Título" />
+  <input id="title-create" type="text" formControlName="title" placeholder="Título" />
   <div class="form-invalid" *ngIf="form.get('title')?.touched && form.get('title')?.invalid">
     el titulo es obligatorio capoide 
   </div>
   <br />
 
-  <textarea formControlName="content" placeholder="Contenido"></textarea>
+  <textarea id="content-create" formControlName="content" placeholder="Contenido"></textarea>
   <div class="form-invalid" *ngIf="form.get('content')?.touched && form.get('content')?.invalid">
     el contenido es obligatorio capoide 
   </div>
   <br />
 
-  <input type="text" formControlName="author" placeholder="Autor" />
+  <input id="author-create" type="text" formControlName="author" placeholder="Autor" />
   <div class="form-invalid" *ngIf="form.get('author')?.touched && form.get('author')?.invalid">
     el autorrr es obligatorio capoide 
   </div>
   <br />
 
-  <input type="file" (change)="onFileSelected($event)" />
+  <input id="file-create" type="file" (change)="onFileSelected($event)" />
 
   <br />
 
