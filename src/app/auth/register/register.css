@@ -59,3 +59,10 @@
 .login-link a:hover {
     text-decoration: underline;
 }
+
+.is-valid{
+    background-color: green;
+}
+.is-invalid{
+    background-color: red;
+}

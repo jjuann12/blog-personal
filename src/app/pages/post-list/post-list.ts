@@ -12,22 +12,21 @@ import { PostService } from '../../core/services/post.service';
   styleUrl: './post-list.css',
 })
 export class PostList implements OnInit {
-   posts: Post[] = [];
+  posts: Post[] = [];
 
   constructor(
     private postService: PostService,
     private router: Router
   ) {}
 
-   ngOnInit(): void {
-     this.postService.getPosts().subscribe({
+  ngOnInit(): void {
+    this.postService.getPosts().subscribe({
       next:(data) => this.posts = data,
       error: (err) => console.error (err)
-     }
-     );
-   }
+    });
+  }
 
-   onDelete(id: number): void {
+  onDelete(id: number): void {
     if (!confirm('¿DE VERDAD LO QUERES BORRAR CAPO?')) {
       return;
     }
@@ -47,8 +46,4 @@ export class PostList implements OnInit {
       }
     });
   }
-   
-
-   
-
 }
