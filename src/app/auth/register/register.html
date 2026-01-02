@@ -6,7 +6,7 @@
             <img src="logo/blogPersonal-logo.png" alt="" style="width: 100px; height: 100px; margin-bottom: 10px;">
             <p class="subtitle">Completaa todo para registrarte</p>
             <div class="form-floating mb-3 ">
-                <input type="text" class="form-control" id="floatingName" formControlName="name" placeholder="Nombre" required>
+                <input type="text" class="form-control" id="floatingName" formControlName="name" placeholder="Nombre" required  [class.is-valid]="Name?.valid && Name?.touched"  [class.is-invalid]="Name?.invalid && Name?.touched">
                 <label for="floatingName">Nombre</label>
                     @if (Name?.errors && Name?.touched) {
                         @if(Name?.hasError('required')) {
@@ -18,7 +18,7 @@
                 
             </div>
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" formControlName="email" placeholder="Email" required>
+                <input type="email" class="form-control" id="floatingInput" formControlName="email" placeholder="Email" required  [class.is-valid]="Email?.valid && Email?.touched"  [class.is-invalid]="Email?.invalid && Email?.touched">
                 <label for="floatingInput">Email</label>
                     @if (Email?.errors && Email?.touched) {
                         @if(Email?.hasError('required')) {
@@ -30,7 +30,7 @@
                 
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingUser" formControlName="user" placeholder="Usuario" required>
+                <input type="text" class="form-control" id="floatingUser" formControlName="user" placeholder="Usuario" required  [class.is-valid]="User?.valid && User?.touched"  [class.is-invalid]="User?.invalid && User?.touched">
                 <label for="floatingUser">Usuario</label>
                     @if (User?.errors && User?.touched) {
                         @if(User?.hasError('required')) {

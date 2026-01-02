@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { validate } from '@angular/forms/signals';
-import { RouterLink, RouterModule, Router } from "@angular/router";
+import { RouterLink, Router } from "@angular/router";
 
 
 @Component({
@@ -21,7 +21,7 @@ export class Register {
     this.registerForm = this.fb.group({
         name: ['name', Validators.required],
         email: ['email', Validators.required],
-        user: ['usuario', Validators.required],
+        user: ['name', Validators.required],
         
         password: ['contrasaeña', Validators.required],
 
@@ -59,7 +59,7 @@ export class Register {
       console.log(name, username)
     }
     else {
-      console.log('no se por que no anda ')
+      alert('No se reconoce tu usuario capo')
     }
     
   

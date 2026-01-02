@@ -5,10 +5,12 @@
     align-items: center;
     height: 100vh;
     background: #1F2F3F;
+    
 }
 
 
 .register-card{
+    margin: 20px;
     max-width: 380px;
     width: 100%;
     padding: 2rem;
@@ -16,6 +18,11 @@
     box-shadow: 0 20px 40x rgba(0, 0, 0, 0.25);
     background-color: #ffffff;
     /*animation: fadeIn 0.6s ease-in-out;*/
+}
+
+.register-form{
+    padding: 30rem;
+
 }
 
 .title {
@@ -60,9 +67,10 @@
     text-decoration: underline;
 }
 
-.is-valid{
+.is-valid label{
     background-color: green;
+
 }
-.is-invalid{
+.is-invalid label{
     background-color: red;
 }

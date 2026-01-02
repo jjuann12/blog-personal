@@ -59,3 +59,11 @@
 .register-link a:hover {
     text-decoration: underline;
 }
+
+.is-valid label {
+    background-color: green;
+}
+
+.is-invalid label {
+    background-color: red;
+}

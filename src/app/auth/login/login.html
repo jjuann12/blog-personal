@@ -1,22 +1,36 @@
 <div class="wrapper">
     <div class="login-card">
-        <form id="login-form">
+        <form id="login-form" [formGroup]="loginForm" (ngSubmit)="onLogin($event)" >
             
-            <h2 class="title">IICIO DE SESION</h2>
+            <h2 class="title">INCIO DE SESION</h2>
             <img src="logo/blogPersonal-logo.png" alt="" style="width: 100px; height: 100px; margin-bottom: 10px;">
             <p class="subtitle">Completaa todo para igresar a la pagina</p>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingUser" placeholder="Usuario" required>
+                <input type="text" class="form-control" id="floatingUser" formControlName="user" placeholder="Usuario" required [class.is-valid]="User?.valid && User?.touched"  [class.is-invalid]="User?.invalid && User?.touched" >
                 <label for="floatingUser">Usuario</label>
+                    @if (User?.errors && User?.touched) {
+                        @if(User?.hasError('required')) {
+                            <p class="text-danger">
+                                Campo requerido capo
+                            </p>
+                        }
+                    }
                 
             </div>
             <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña"required>
+                <input type="password" class="form-control" id="floatingPassword" formControlName="password" placeholder="Contraseña" required [class.is-valid]="Password?.valid && Password?.touched"  [class.is-invalid]="Password?.invalid && Password?.touched" >
                 <label for="floatingPassword">Contraseña</label>
+                    @if (Password?.errors && Password?.touched) {
+                        @if(Password?.hasError('required')) {
+                            <p class="text-danger">
+                                Campo requerido capo
+                            </p>
+                        }
+                    }
                 
             </div>
             <div class="d-grid gap-2">
-                <button class="btn btn-login w-100" type="button">Entrar</button>
+                <button class="btn btn-login w-100" type="submit">Entrar</button>
             </div>
             <div>
                 <p class="register-link mt-3">¿No tienes cuenta? <a routerLink="/register"> Registrate </a></p>
